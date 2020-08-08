@@ -13,7 +13,6 @@ function App() {
   const [moviedata,setMoviedata]=useState(data)
   const [moviename,setMoviename]=useState("")
   const [rate, setRate] = useState(0)
-  const [movied, setMovied] = useState()
   
 
   function gettext(str){
@@ -26,19 +25,20 @@ function App() {
 
   function addm(str){
     setMoviedata([...moviedata, str])
-    change++
   }
   
 
 
   return (
     <>
-    <Movieadd handleChange={addm} /><br/>
-    <div style={{display:'flex'}}>
-    <Moviefilter  handleChange={gettext}/>
-    <Rater handle={getrate}/>
+    <div style={{display:'flex' ,justifyContent:'center'}}>
+      <Moviefilter  handleChange={gettext}/>
+      <Rater handle={getrate}/>
     </div>
-    <Movielist mdata={moviedata} mname={moviename} mrate={rate} datachange={change}/>
+    <Movielist mdata={moviedata} mname={moviename} mrate={rate}/>
+    <div style={{display:'flex' ,justifyContent:'center',marginBottom:'5%'}}>
+    <Movieadd handleChange={addm} />
+    </div>
     </>
   );
 }

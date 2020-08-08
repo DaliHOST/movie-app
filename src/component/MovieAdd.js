@@ -18,20 +18,17 @@ function Movieadd(props) {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    // const handleSave = () => {
-    //     setShow(false);
-    //     setNemovie(newmovie);
-    //     props.handleChange(nemovie)
-    // }
+    
+    
     return (
         <>
             <Button variant="primary" onClick={handleShow}>
-                Launch demo modal
+                Add a movie
         </Button>
 
             <Modal show={show} onHide={handleClose} animation={false}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
+                    <Modal.Title>Write your movie's info</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <input type='text' placeholder='The title' onChange={(e) => { nemovie.title = e.target.value }}></input>
@@ -48,7 +45,7 @@ function Movieadd(props) {
                         setShow(false);
                         props.handleChange(nemovie)
                     }}>
-                        Save Changes
+                        Add
             </Button>
                 </Modal.Footer>
             </Modal>
