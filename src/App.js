@@ -24,7 +24,7 @@ function App() {
   }
 
   function addm(str){
-    setMoviedata([...moviedata, str])
+    setMoviedata(moviedata=>[...moviedata, str])
   }
   
 
